@@ -127,6 +127,7 @@ services:
     ports:
       - "30333:30333"
       - "9933:9933"
+      - "9615:9615"
     networks:
       - net
     environment:
