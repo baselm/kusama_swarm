@@ -1,0 +1,1 @@
+docker run -d --name kusama-validator -p 30333:30333 -p 9933:9933 -p 9615:9615 parity/polkadot:latest --validator --name=Raya02 --pruning=archive --wasm-execution Compiled --chain kusama --prometheus-external --prometheus-port 9615
