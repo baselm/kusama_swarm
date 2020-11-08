@@ -16,7 +16,10 @@ SERVICE=$(echo "$job" | cut -d":" -f1)
 PORT=$(echo "$job" | cut -d":" -f2)
 
 cat >>/tmp/prometheus.yml <<EOF
-
+  - job_name: 'substrate_node'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['polkadot:9615']
   - job_name: '${SERVICE}'
     dns_sd_configs:
     - names:
