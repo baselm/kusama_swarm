@@ -1,6 +1,6 @@
 ADMIN_USER=admin \
-ADMIN_PASSWORD=B@ssel99 \
+ADMIN_PASSWORD=admin \
 SLACK_URL=https://sanadstach.slack.com/archives/D01E9K3LJ3T \
 SLACK_CHANNEL=devops-alerts \
 SLACK_USER=alertmanager \
-docker stack deploy -c docker-compose.yml mon
+docker stack deploy -c docker-compose.yml mon2
