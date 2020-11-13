@@ -9,7 +9,7 @@ volumes:
     prometheus: {}
     grafana: {}
     alertmanager: {}
-    polkadot: {}
+
 
 configs:
   caddy_config:
@@ -121,31 +121,7 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-  
-  polkadot:
-    image: parity/polkadot:latest
-    ports:
-      - "30333:30333"
-      - "9933:9933"
-      - "9615:9615"
-    networks:
-      - net
-    environment:
-      - "POLKADOT_URIS=default:http://polkadot:9615"
-      - VALIDATOR_NODE_KEY
-      - VALIDATOR_BASE_PATH
-      - VALIDATOR_CHAIN
-      - VALIDATOR_PORT
-      - VALIDATOR_NAME
-      - VALIDATOR_RESERVED_NODES
-    command: --validator --name=Testing --pruning=archive --wasm-execution Compiled --chain kusama --prometheus-external --prometheus-port 9615
-    
-    volumes:
-      - polkadot:/data 
-    deploy:
-      mode: replicated
-      replicas: 1
-
+      
   node-exporter:
     image: stefanprodan/swarmprom-node-exporter:v0.16.0
     networks:

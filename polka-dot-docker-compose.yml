@@ -132,6 +132,12 @@ services:
       - net
     environment:
       - "POLKADOT_URIS=default:http://polkadot:9615"
+      - VALIDATOR_NODE_KEY
+      - VALIDATOR_BASE_PATH
+      - VALIDATOR_CHAIN
+      - VALIDATOR_PORT
+      - VALIDATOR_NAME
+      - VALIDATOR_RESERVED_NODES
     command: --validator --name=Testing --pruning=archive --wasm-execution Compiled --chain kusama --prometheus-external --prometheus-port 9615
     
     volumes:
